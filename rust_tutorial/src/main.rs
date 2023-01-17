@@ -12,7 +12,10 @@ fn main() {
     // variables in rust are immutable by default
     let mut name = String::new();
     let greeting: &str = "Nice to meet you";
-    io::stdin().read_line(buf: &mut name) Result<usize, Error>.expect(msg: "Didn't recieve input!");
+    io::stdin()
+    .read_line(&mut name)
+    .ok()
+    .expect("Failed to read line");
     // if you see an ! at the end of a function it is a macro
     println!("Hello {}! {}", name.trim_end(), greeting);
 }
