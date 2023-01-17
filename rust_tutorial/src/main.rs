@@ -7,6 +7,15 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-   let random_num = rand::thread_rng().gen_range(1..101);
-   println!("Random num : {}", random_num);
+   let age: i32 = 8;
+   if(age >= 1) && (age <=18){
+    println!("Important birthday");
+   }
+   else if(age == 21) || (age == 50){
+    println!("Important birthday");
+   }else if age >= 65{
+    println!("Important birthday");
+   }else{
+    println!("Your birthday isn't important");
+   }
 }
