@@ -7,5 +7,6 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-   
+   let random_num = rand::thread_rng().gen_range(1..101);
+   println!("Random num : {}", random_num);
 }
