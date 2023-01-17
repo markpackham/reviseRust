@@ -7,15 +7,11 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-   let age: i32 = 8;
-   if(age >= 1) && (age <=18){
-    println!("Important birthday");
-   }
-   else if(age == 21) || (age == 50){
-    println!("Important birthday");
-   }else if age >= 65{
-    println!("Important birthday");
-   }else{
-    println!("Your birthday isn't important");
-   }
+   let mut my_age = 100;
+   let can_vote = if my_age >= 18{
+    true
+   } else{
+    false
+   };
+   println!("Can vote : {}", can_vote);
 }
