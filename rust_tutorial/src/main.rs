@@ -7,11 +7,5 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-    const ONE_MIL: u32 = 1_000_000;
-    const ONE_MIL2: u32 = 1000000;
-    const PI: f32 = 3.141;
-    let age: &str = "47";
-    let mut age: u32 = age.trim().parse().expect("Age wasn't entered");
-    age = age +1;
-    println!("I'm {} and I want ${}",age, ONE_MIL);
+   
 }
