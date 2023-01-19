@@ -7,10 +7,11 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
- let my_tuple: (u8, String, f64) = (47, "Billy".to_string(),50_000.00);
- println!("Name : {}",my_tuple.1);
- println!("Age : {}",my_tuple.0);
- println!("Wealth : £{}",my_tuple.2);
- let(v1,v2,v3) = my_tuple;
- println!("Age : {}",v1);
+ let st3 = String::from("x a b c d e f g g g g");
+ let mut v1: Vec<char> = st3.chars().collect();
+ v1.sort();
+ v1.dedup();
+ for char in v1{
+   println!("{}", char);
+ }
 }
