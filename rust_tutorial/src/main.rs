@@ -11,7 +11,12 @@ fn get_sum(x: i32, y: i32){
    println!("{} + {} = {}", x, y, x+y);
 }
 
+fn get_sum2(x: i32, y: i32) -> i32{
+   x + y
+}
+
 fn main() {
-   get_sum(1,2);
+   //get_sum(1,2);
+   println!("{}",get_sum2(10, 11));
 
 }
