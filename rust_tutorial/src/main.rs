@@ -7,17 +7,12 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 
-fn get_sum(x: i32, y: i32){
-   println!("{} + {} = {}", x, y, x+y);
+fn get_2(x: i32) -> (i32, i32) {
+   return (x+1,x+2);
 }
 
-fn get_sum2(x: i32, y: i32) -> i32{
-   //x + y
-   return x + y;
-}
 
 fn main() {
-   //get_sum(1,2);
-   println!("{}",get_sum2(10, 11));
-
+   let (va1_1, val_2) = get_2(10);
+   println!("{} {}", va1_1, val_2);
 }
