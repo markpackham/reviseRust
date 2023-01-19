@@ -12,7 +12,8 @@ fn get_sum(x: i32, y: i32){
 }
 
 fn get_sum2(x: i32, y: i32) -> i32{
-   x + y
+   //x + y
+   return x + y;
 }
 
 fn main() {
