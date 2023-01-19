@@ -7,21 +7,10 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
- let arr_1 = [1, 2, 3, 4, 5];
- println!("1st: {}", arr_1[0]);
- println!("Length: {}", arr_1.len());
-
- let arr_2 = [1,2,3,4,5,6,7,8,9,10,11];
- let mut loop_idx = 0;
- loop {
-   if arr_2[loop_idx] % 2 == 0{
-      loop_idx += 1;
-      continue;
-   }
-   if arr_2[loop_idx] == 9{
-      break;
-   }
-   println!("Val : {}", arr_2[loop_idx]);
-   loop_idx +=1;
- }
+ let my_tuple: (u8, String, f64) = (47, "Billy".to_string(),50_000.00);
+ println!("Name : {}",my_tuple.1);
+ println!("Age : {}",my_tuple.0);
+ println!("Wealth : £{}",my_tuple.2);
+ let(v1,v2,v3) = my_tuple;
+ println!("Age : {}",v1);
 }
