@@ -7,39 +7,29 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-     enum Day {
-      Monday,
-      Tuesday,
-      Wednesday,
-      Thursday,
-      Friday,
-      Saturday,
-      Sunday
-  }
 
-  // can define functions for the enum I want to work with
-  impl Day {
-      fn is_weekend(&self) -> bool {
-         // in Rust you will use match as much as you use If statements
-          match self {
-              Day::Saturday | Day::Sunday => true,
-              _ => false
-          }
-      }
-  }
+   // vectors are growable arrays that can only store values of same type
+   let vec1: Vec<i32> = Vec::new();
+   let mut vec2 = vec![1,2,3,4];
+   vec2.push(5);
+   println!("1st: {}", vec2[0]);
+   let second: &i32 = &vec2[1];
+   match vec2.get(1){
+      Some(second) => println!("2nd: {}", second),
+      None => println!("No 2nd value"),
+   }
 
-  let today:Day = Day::Monday;
+   for i in &mut vec2 {
+      *i *=2;
+   }
 
-  match today {
-   Day::Monday => println!("Everyone hates Monday"),
-   Day::Tuesday => println!("Pancake day"),
-   Day::Wednesday => println!("Odin day"),
-   Day::Thursday => println!("Thor's day"),
-   Day::Friday => println!("Almost Weekend"),
-   Day::Saturday => println!("Weekend!!!"),
-   Day::Sunday => println!("Weekend!!!"),
-}
+   for i in &vec2{
+      println!("{}", i);
+   }
 
-println!("Is today the weekend {}", today.is_weekend());
+   println!("Vec length {}", vec2.len());
+   println!("Pop off last value: {:?}",vec2.pop());
+
+
 
 }
