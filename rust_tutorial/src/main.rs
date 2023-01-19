@@ -14,4 +14,11 @@ fn main() {
  for char in v1{
    println!("{}", char);
  }
+ let st4: &str = "Random string";
+ let mut st5: String = st4.to_string();
+ println!("{}",st5);
+ let byte_arr1 = st5.as_bytes();
+ let st6 = &st5[0..6];
+ println!("String length : {}", st6.len());
+ st5.clear();
 }
