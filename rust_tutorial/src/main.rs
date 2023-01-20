@@ -38,4 +38,10 @@ fn main() {
       }
    }
 
+   let rec: Rectangle = Shape::new(10.0,10.0);
+   let circ: Circle = Shape::new(10.0,10.0);
+
+   println!("Rectangle Area: {}", rec.area());
+   println!("Circle Area: {}", circ.area());
+
 }
