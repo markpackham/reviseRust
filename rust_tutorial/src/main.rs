@@ -19,4 +19,15 @@ fn main() {
    for(k, v) in heroes.iter() {
       println!("{} = {}", k, v);
    }
+
+   println!("Length : {}", heroes.len());
+
+   if heroes.contains_key(&"Batman"){
+      let the_batman = heroes.get(&"Batman");
+      match the_batman {
+          Some(_x) => println!("Batman is a hero"),
+          None => println!("Batman is not a hero"),
+      }
+  }
+
 }
