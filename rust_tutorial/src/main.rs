@@ -16,4 +16,9 @@ fn main() {
    }
 
    let rec = Reactangle{length:4, height:10.5};
+   
+   // functions can be used by any struct that implements correct trait
+   trait Shape{
+      fn new(length: f32, width: f32) -> Self;
+   }
 }
