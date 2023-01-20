@@ -8,12 +8,23 @@ use std::cmp::Ordering;
 use std::ops::Add;
 
 
+fn print_str(x: String){
+   println!("A string {}", x);
+}
+
+fn print_return_str(x: String)-> String{
+   println!("A string {}", x);
+   return x;
+}
+
+fn change_string(name: &mut String){
+   name.push_str(" is happy");
+   println!("Message : {}", name);
+}
+
 fn main() {
    let str1 = String::from("World");
-   // clone() duplicates str1's value
-   // if I used the assignment operator rather than clone()
-   // then str1 would lose it's value in memory
    let str2: String = str1.clone();
-   // str1 would be empty without clone since str2 would steal it's value
-   println!("Hello {}",str1);
+   let str3 = print_return_str(str1);
+   println!("str3 = {}",str3);
 }
