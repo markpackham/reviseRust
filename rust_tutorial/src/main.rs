@@ -6,28 +6,21 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 use std::ops::Add;
-// needed for key value pair Hashmap
 use std::collections::HashMap;
 
 fn main() {
-   let mut heroes = HashMap::new();
 
-   heroes.insert("Superman","Clark Kent");
-   heroes.insert("Spiderman","Peter Parker");
-   heroes.insert("Batman","Bruce Wayne");
-
-   for(k, v) in heroes.iter() {
-      println!("{} = {}", k, v);
+   struct Customer{
+      name: String,
+      address: String,
+      balance: f32,
    }
 
-   println!("Length : {}", heroes.len());
+   let mut bob = Customer{
+      name: String::from("Bob Smith"),
+      address: String::from("123 Street"),
+      balance: 12.34
+   };
 
-   if heroes.contains_key(&"Batman"){
-      let the_batman = heroes.get(&"Batman");
-      match the_batman {
-          Some(_x) => println!("Batman is a hero"),
-          None => println!("Batman is not a hero"),
-      }
-  }
-
+   bob.address = String::from("505 Street");
 }
