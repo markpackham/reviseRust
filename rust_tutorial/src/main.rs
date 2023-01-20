@@ -9,16 +9,33 @@ use std::ops::Add;
 use std::collections::HashMap;
 
 fn main() {
+   const PI: f32 = 3.141592;
 
-   struct Reactangle<T, U>{
-      length: T,
-      height: U,
-   }
-
-   let rec = Reactangle{length:4, height:10.5};
-   
-   // functions can be used by any struct that implements correct trait
    trait Shape{
       fn new(length: f32, width: f32) -> Self;
+      fn area(&self) -> f32;
    }
+
+   struct Rectangle {length: f32, width: f32};
+   struct Circle {length: f32, width: f32};
+
+   // implement (use the Interface of Shape)
+   impl Shape for Rectangle{
+      fn new(length: f32, width: f32) -> Rectangle{
+         return Rectangle{length, width};
+      }
+      fn area(&self)-> f32{
+         return self.length * self.width;
+      }
+   }
+
+   impl Shape for Circle{
+      fn new(length: f32, width: f32) -> Circle{
+         return Circle{length, width};
+      }
+      fn area(&self)-> f32{
+         return (self.length/2.0).powf(2.0) * PI;
+      }
+   }
+
 }
