@@ -6,19 +6,16 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
+use std::ops::Add;
 
-fn sum_list(list: &[i32]) -> i32{
-   let mut sum = 0;
-   for &val in list.iter(){
-      sum += &val;
-   } 
-   sum
-   // also works if you love return and semi colons
-   // return sum;
+// Generic <T> just like C# T is a placeholder, you can use any letter
+// to add Generics we need to use std::ops::Add;
+fn get_sum_gen<T:Add<Output = T>>(x: T, y: T)->T{
+   return x + y;
 }
 
-
 fn main() {
-   let num_list = vec![1,2,3,4,5];
-   println!("Sum of list = {}", sum_list(&num_list));
+   println!("5 + 4 = {}", get_sum_gen(5,4));
+   println!("50000000 + 40000000 = {}", get_sum_gen(500000000,400000000));
+   println!("5.1 + 4.1 = {}", get_sum_gen(5.1,4.1));
 }
