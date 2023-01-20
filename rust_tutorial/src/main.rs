@@ -10,7 +10,8 @@ use std::ops::Add;
 use std::collections::HashMap;
 
 fn main() {
-   let mut hereos: HashMap<&str, &str> = HashMap::new();
+   let mut heroes = HashMap::new();
+
    heroes.insert("Superman","Clark Kent");
    heroes.insert("Spiderman","Peter Parker");
    heroes.insert("Batman","Bruce Wayne");
