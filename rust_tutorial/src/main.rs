@@ -23,8 +23,6 @@ fn change_string(name: &mut String){
 }
 
 fn main() {
-   let str1 = String::from("World");
-   let str2: String = str1.clone();
-   let str3 = print_return_str(str1);
-   println!("str3 = {}",str3);
+   let mut str1 = String::from("Edward");
+   change_string(&mut str1);
 }
