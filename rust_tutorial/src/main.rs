@@ -10,17 +10,10 @@ use std::collections::HashMap;
 
 fn main() {
 
-   struct Customer{
-      name: String,
-      address: String,
-      balance: f32,
+   struct Reactangle<T, U>{
+      length: T,
+      height: U,
    }
 
-   let mut bob = Customer{
-      name: String::from("Bob Smith"),
-      address: String::from("123 Street"),
-      balance: 12.34
-   };
-
-   bob.address = String::from("505 Street");
+   let rec = Reactangle{length:4, height:10.5};
 }
