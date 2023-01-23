@@ -14,9 +14,15 @@ use std::collections::HashMap;
 
 fn main() {
 
-   let mut arr_it = [1,2,3,4];
+   // a Closure is a function without a name, often stored in a variable
 
-   let mut iter1 = arr_it.iter();
-   println!("1st : {:?}", iter1.next());
+   // Basic closure structure
+   // let var_name = |parameters|-> return_type {BODY}
+
+   let can_vote = |age: i32|{
+      age >= 18
+   };
+
+   println!("Can vote : {}", can_vote(120));
 
 }
