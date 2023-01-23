@@ -16,7 +16,7 @@ fn main() {
 
    // a Closure is a function without a name, often stored in a variable
 
-   // Basic closure structure
+   // Basic closure structure, if there are no params leave || empty
    // let var_name = |parameters|-> return_type {BODY}
 
    let can_vote = |age: i32|{
@@ -24,5 +24,10 @@ fn main() {
    };
 
    println!("Can vote : {}", can_vote(120));
+
+   // unlike functions closures can access variables outside their bodies
+   let mut sample1 = 5;
+   let print_var = || println!("samp1 = {}",sample1);
+   print_var();
 
 }
