@@ -13,34 +13,13 @@ use std::collections::HashMap;
 // use crate::restaurant::order_food;
 
 fn main() {
-   // order_food();
 
-   let path = "lines.txt";
-   let output = File::create(path);
-   let mut output = match output {
-      Ok(file) => file,
-      Err(error) => {
-         panic!("Problem creating file {:?}", error);
-      }
-   };
-   write!(output, "Just some\nRandom words").expect("Failed to write to file");
-
-   let input = File::open(path).unwrap();
-   let buffered = BufReader::new(input);
-   for line in buffered.lines(){
-      println!("{}", line.unwrap());
+   let mut arr_it = [1,2,3,4];
+   // you cannot change values with an iterator, it only borrows them from memory
+   for val in arr_it.iter(){
+      println!("{}", val);
    }
 
-   let output2 = File::create("rand.txt");
-   let output2 = match output2{
-      Ok(file)=>file,
-      // catch specific error
-      Err(error)=>match error.kind(){
-         ErrorKind::NotFound => match File::create("rand.txt"){
-            Ok(fc) => fc,
-            Err(e)=> panic!("Cannot create file: {:?}", error),
-         },
-         _other_error => panic!("Problem opening file: {:?}", error),
-      },
-   };
+   // here you can consume the collection but not use it
+   arr_it.into_iter();
 }
