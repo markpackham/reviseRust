@@ -1,5 +1,5 @@
 mod pizza_order{
-    
+
     pub struct Pizza{
         pub dough: String,
         pub cheese: String,
@@ -27,5 +27,16 @@ mod pizza_order{
                 super::Pizza::lunch("veggies");
             serve_customer(cust_pizza);
         }
+        fn serve_customer(cust_pizza: super::Pizza) {
+            println!("The customer is served a regular pizza with {}", cust_pizza.topping);
+        }
     }
+}
+
+// this is a public function that allows other files to access the stuff we want
+// so in main.rs we just use order_food();
+pub fn order_food(){
+    // restaurant is the directory, pizza is the module, help customer is 
+    // the module in pizza_order and take order is the function we want
+    crate::restaurant::pizza_order::help_customer::take_order();
 }
