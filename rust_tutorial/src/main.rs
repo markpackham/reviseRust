@@ -23,4 +23,11 @@ fn main() {
          panic!("Problem creating file {:?}", error);
       }
    };
+   write!(output, "Just some\nRandom words").expect("Failed to write to file");
+
+   let input = File::open(path).unwrap();
+   let buffered = BufReader::new(input);
+   for line in buffered.lines(){
+      println!("{}", line.unwrap());
+   }
 }
