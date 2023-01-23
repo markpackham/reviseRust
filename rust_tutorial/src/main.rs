@@ -9,9 +9,11 @@ use std::ops::Add;
 use std::collections::HashMap;
 
 // we need to access the restaurant directory
-mod restaurant;
-use crate::restaurant::order_food;
+// mod restaurant;
+// use crate::restaurant::order_food;
 
 fn main() {
-   order_food();
+   // order_food();
+
+   panic!("Terrible Error");
 }
