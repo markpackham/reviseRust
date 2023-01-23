@@ -29,5 +29,12 @@ fn main() {
    let mut sample1 = 5;
    let print_var = || println!("samp1 = {}",sample1);
    print_var();
+   
+   sample1 = 10;
+   let mut change_var = || sample1 += 111;
+   change_var();
+   println!("sample1 = {}", sample1);
+   sample1 = -99;
+   println!("sample1 = {}", sample1);
 
 }
