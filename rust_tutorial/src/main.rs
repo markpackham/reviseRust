@@ -15,5 +15,12 @@ use std::collections::HashMap;
 fn main() {
    // order_food();
 
-   panic!("Terrible Error");
+   let path = "lines.txt";
+   let output = File::create(path);
+   let mut output = match output {
+      Ok(file) => file,
+      Err(error) => {
+         panic!("Problem creating file {:?}", error);
+      }
+   };
 }
