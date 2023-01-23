@@ -30,4 +30,17 @@ fn main() {
    for line in buffered.lines(){
       println!("{}", line.unwrap());
    }
+
+   let output2 = File::create("rand.txt");
+   let output2 = match output2{
+      Ok(file)=>file,
+      // catch specific error
+      Err(error)=>match error.kind(){
+         ErrorKind::NotFound => match File::create("rand.txt"){
+            Ok(fc) => fc,
+            Err(e)=> panic!("Cannot create file: {:?}", error),
+         },
+         _other_error => panic!("Problem opening file: {:?}", error),
+      },
+   };
 }
