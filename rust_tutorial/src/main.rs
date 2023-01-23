@@ -15,11 +15,8 @@ use std::collections::HashMap;
 fn main() {
 
    let mut arr_it = [1,2,3,4];
-   // you cannot change values with an iterator, it only borrows them from memory
-   for val in arr_it.iter(){
-      println!("{}", val);
-   }
 
-   // here you can consume the collection but not use it
-   arr_it.into_iter();
+   let mut iter1 = arr_it.iter();
+   println!("1st : {:?}", iter1.next());
+
 }
