@@ -31,7 +31,7 @@ fn main() {
       }
    }
 
-   fn customer(the_bank: &Arc<Mutex<Bank>>){
+   fn customer(the_bank: Arc<Mutex<Bank>>){
       withdraw(&the_bank, 5.00);
    }
 
