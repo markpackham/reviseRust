@@ -11,8 +11,10 @@ use std::collections::HashMap;
 fn main() {
 
     struct TreeNode<T> {
-      pub left: TreeNode<T>,
-      pub right: TreeNode<T>,
+      pub left: Option<Box<TreeNode<T>>>,
+      pub right: Option<Box<TreeNode<T>>>,
       pub key: T,
     }
+
+
 }
