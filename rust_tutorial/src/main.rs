@@ -12,7 +12,7 @@ use std::time::Duration;
 
 fn main() {
    
-thread::spawn(move || {
+let thread1 = thread::spawn(move || {
    for i in 1..15{
       println!("Spawned thread: {}", i);
       thread::sleep(Duration::from_millis(1));
@@ -24,5 +24,7 @@ for i in 1..5{
    thread::sleep(Duration::from_millis(1));
 }
 
+// join is used so you can be 100% sure a thread will complete its work
+thread1.join().unwrap();
 
 }
