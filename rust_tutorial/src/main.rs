@@ -8,33 +8,17 @@ use std::cmp::Ordering;
 use std::ops::Add;
 use std::collections::HashMap;
 
-// we need to access the restaurant directory
-// mod restaurant;
-// use crate::restaurant::order_food;
-
 fn main() {
 
-   // a Closure is a function without a name, often stored in a variable
+   fn use_func<T>(a:i32, b:i32, func:T) -> i32
+      where T: Fn(i32, i32) ->i32 {
+         func(a,b)
+      }
 
-   // Basic closure structure, if there are no params leave || empty
-   // let var_name = |parameters|-> return_type {BODY}
-
-   let can_vote = |age: i32|{
-      age >= 18
-   };
-
-   println!("Can vote : {}", can_vote(120));
-
-   // unlike functions closures can access variables outside their bodies
-   let mut sample1 = 5;
-   let print_var = || println!("samp1 = {}",sample1);
-   print_var();
+      let sum = |a,b| a + b;
+      let multiply = |a,b| a * b;
+      println!("5 + 4 = {}", use_func(5,4,sum));
+      println!("5 x 4 = {}", use_func(5,4,multiply));
    
-   sample1 = 10;
-   let mut change_var = || sample1 += 111;
-   change_var();
-   println!("sample1 = {}", sample1);
-   sample1 = -99;
-   println!("sample1 = {}", sample1);
 
 }
