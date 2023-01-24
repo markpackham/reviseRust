@@ -16,5 +16,23 @@ fn main() {
       pub key: T,
     }
 
+    impl<T> TreeNode<T> {
+      pub fn new(key: T) -> Self{
+         TreeNode {left: None, right: None, key,
+         }
+      }
+
+      pub fn left(mut self, node: TreeNode<T>) -> Self{
+         self.left = Some(box::new(node));
+         self
+       }
+   
+       pub fn right(mut self, node: TreeNode<T>) -> Self{
+         self.right = Some(box::new(node));
+         self
+       }
+    }
+
+
 
 }
