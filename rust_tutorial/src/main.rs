@@ -29,7 +29,12 @@ fn main() {
          bank_ref.balance -= amount;
          println!("Customer withdrew {}, Current balance {}", amount, bank_ref.balance);
       }
-
    }
+
+   fn customer(the_bank: &Arc<Mutex<Bank>>){
+      withdraw(&the_bank, 5.00);
+   }
+
+   let bank: Arc<Mutex<Bank>> = Arc::new(Mutex::new(Bank {balance: 20.00}));
    
 }
