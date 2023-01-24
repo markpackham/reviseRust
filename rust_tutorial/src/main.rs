@@ -12,19 +12,10 @@ use std::time::Duration;
 
 fn main() {
    
-let thread1 = thread::spawn(move || {
-   for i in 1..15{
-      println!("Spawned thread: {}", i);
-      thread::sleep(Duration::from_millis(1));
+   pub struct Bank{
+      balance: f32
    }
-});
-
-for i in 1..5{
-   println!("Main thread: {}", i);
-   thread::sleep(Duration::from_millis(1));
-}
-
-// join is used so you can be 100% sure a thread will complete its work
-thread1.join().unwrap();
-
+   fn withdraw(the_bank: &mut Bank, amt:f32){
+      the_bank.balance -= amt;
+   }
 }
