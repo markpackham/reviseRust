@@ -23,16 +23,19 @@ fn main() {
       }
 
       pub fn left(mut self, node: TreeNode<T>) -> Self{
-         self.left = Some(box::new(node));
+         self.left = Some(Box::new(node));
          self
        }
    
        pub fn right(mut self, node: TreeNode<T>) -> Self{
-         self.right = Some(box::new(node));
+         self.right = Some(Box::new(node));
          self
        }
     }
 
-
+    // create root node and assign left and right branches
+    let node1 = TreeNode::new(1)
+    .left(TreeNode::new(2))
+    .right(TreeNode::new(3));
 
 }
