@@ -37,4 +37,17 @@ fn main() {
 
    let bank: Arc<Mutex<Bank>> = Arc::new(Mutex::new(Bank {balance: 20.00}));
    
+   let handles = (0..10).map(|_| {
+
+      let bank_ref = bank.clone();
+      thread::spawn(|| {
+          customer(bank_ref);
+      })
+  });
+
+  for handle in handles {
+   handle.join().unwrap();
+  }
+  println!("Total {}", bank.lock().unwrap().balance);
+
 }
