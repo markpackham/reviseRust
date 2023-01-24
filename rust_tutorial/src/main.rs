@@ -10,15 +10,9 @@ use std::collections::HashMap;
 
 fn main() {
 
-   fn use_func<T>(a:i32, b:i32, func:T) -> i32
-      where T: Fn(i32, i32) ->i32 {
-         func(a,b)
-      }
+    // A box is used when you have a large amount of data stored
+    // on the heap and then you pass pointers to it on the stack.
 
-      let sum = |a,b| a + b;
-      let multiply = |a,b| a * b;
-      println!("5 + 4 = {}", use_func(5,4,sum));
-      println!("5 x 4 = {}", use_func(5,4,multiply));
-   
-
+    let box_int1 = Box::new(10);
+    println!("b_int1 = {}", box_int1);
 }
