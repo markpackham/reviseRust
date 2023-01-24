@@ -10,9 +10,9 @@ use std::collections::HashMap;
 
 fn main() {
 
-    // A box is used when you have a large amount of data stored
-    // on the heap and then you pass pointers to it on the stack.
-
-    let box_int1 = Box::new(10);
-    println!("b_int1 = {}", box_int1);
+    struct TreeNode<T> {
+      pub left: TreeNode<T>,
+      pub right: TreeNode<T>,
+      pub key: T,
+    }
 }
